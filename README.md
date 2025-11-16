@@ -78,6 +78,10 @@ This project analyzes UK confectionary sales data to understand regional perform
 │   ├── key_distributions.png
 │   ├── regional_profit.png
 │   └── product_profit.png
+├── src/                      # Source code modules
+│   └── data_prep.py          # Data preparation functions
+├── dashboard/                # Interactive dashboard
+│   └── app.py                # Streamlit application
 └── README.md                 # This file
 ```
 
@@ -113,13 +117,19 @@ This project analyzes UK confectionary sales data to understand regional perform
 ![Product Profit](images/product_profit.png)
 *Figure 3: Profit by confectionery type, highlighting Chocolate Chunk as the volume leader and Caramel Nut as a premium margin product.*
 
-### Dashboard Preview (Planned)
-The interactive Streamlit dashboard will include:
-- **KPI Cards:** Total units, revenue, profit, and average margin
-- **Regional Analysis:** Interactive bar charts and heatmaps
-- **Product Insights:** Performance comparison across regions
-- **Time Series:** Monthly trends with region filtering
-- **Cross-Analysis:** Region × Product profit margin matrix
+### Dashboard Preview
+The interactive Streamlit dashboard includes:
+- **KPI Cards:** Total units, revenue, profit, and average margin (dynamically updating)
+- **Regional Analysis:** Interactive bar charts showing profit by region
+- **Product Insights:** Performance comparison across confectionery types
+- **Time Series:** Monthly trends with region filtering and interactive legends
+- **Cross-Analysis:** Heatmap showing profit margins by region and product type
+
+**🎯 Key Dashboard Benefits:**
+- **Real-time Filtering:** Instantly see how different combinations affect business metrics
+- **Interactive Exploration:** Hover over charts for detailed information
+- **Business Intelligence:** Support data-driven decision making for the British Confectionary Council
+- **Mobile Friendly:** Responsive design that works on all devices
 
 ### Key Statistics Summary
 
@@ -186,14 +196,31 @@ jupyter notebook main.ipynb
 5. **Generate Visualizations (Optional):** `python generate_visualizations.py`
 6. **Review Outputs:** Check generated visualizations and CSV exports
 
-### Dashboard Development (Future)
+### Interactive Dashboard
+The project includes a fully functional Streamlit dashboard for interactive data exploration:
+
 ```bash
-# Navigate to dashboard directory (when implemented)
+# Navigate to dashboard directory
 cd dashboard/
 
-# Run Streamlit app
+# Activate virtual environment (if using venv)
+source ../.venv/Scripts/activate  # On Windows
+# or
+# source ../venv/bin/activate     # On macOS/Linux
+
+# Run the dashboard
 streamlit run app.py
 ```
+
+**Dashboard Features:**
+- **Interactive Filters:** Filter by region, product type, and date range
+- **KPI Cards:** Real-time metrics that update with filters
+- **Regional Analysis:** Profit performance across UK regions
+- **Product Insights:** Confectionery type profitability comparison
+- **Performance Matrix:** Heatmap showing profit margins by region and product
+- **Time Series:** Monthly sales trends with regional breakdown
+
+**Dashboard URL:** Once running, access at `http://localhost:8501`
 
 ## Visualizations Generated
 
