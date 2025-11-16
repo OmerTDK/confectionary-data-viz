@@ -56,7 +56,13 @@ st.markdown("""
 def load_data():
     """Load and prepare data with caching"""
     try:
-        df = prepare_data("confectionary.xlsx")
+        # Look for data file in parent directory (project root)
+        import os
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        parent_dir = os.path.dirname(current_dir)
+        data_file = os.path.join(parent_dir, "confectionary.xlsx")
+
+        df = prepare_data(data_file)
         return df
     except FileNotFoundError:
         st.error("❌ Data file 'confectionary.xlsx' not found. Please ensure it's in the project root directory.")
