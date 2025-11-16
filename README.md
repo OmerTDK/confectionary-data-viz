@@ -77,11 +77,7 @@ This project analyzes UK confectionary sales data to understand regional perform
 ├── images/                   # Generated visualization images
 │   ├── key_distributions.png
 │   ├── regional_profit.png
-│   ├── product_profit.png
-│   ├── dashboard_kpi.png         # Dashboard KPI cards screenshot
-│   ├── dashboard_regional.png    # Regional analysis view
-│   ├── dashboard_heatmap.png     # Performance matrix heatmap
-│   └── dashboard_timeseries.png  # Time series analysis
+│   └── product_profit.png
 ├── src/                      # Source code modules
 │   └── data_prep.py          # Data preparation functions
 ├── dashboard/                # Interactive dashboard
@@ -146,62 +142,6 @@ The interactive Streamlit dashboard includes:
 | Profit Margin | 0.31% | 0.29% | 0.15% | -0.76% | 1.2% |
 
 *Data based on 984 cleaned transactions after removing missing values*
-
-## Interactive Dashboard Screenshots
-
-### Dashboard Overview
-![Dashboard KPI Cards](images/dashboard_kpi.png)
-*Figure 4: Main dashboard interface showing key performance indicators and filter controls*
-
-### Regional Performance Analysis
-![Dashboard Regional View](images/dashboard_regional.png)
-*Figure 5: Interactive regional analysis showing profit performance across UK regions with dynamic filtering*
-
-### Product Performance Matrix
-![Dashboard Heatmap](images/dashboard_heatmap.png)
-*Figure 6: Performance matrix heatmap displaying profit margins by region and confectionery type*
-
-### Time Series Analysis
-![Dashboard Time Series](images/dashboard_timeseries.png)
-*Figure 7: Monthly sales trends visualization with regional filtering and interactive legends*
-
-### How to Capture Dashboard Screenshots
-
-#### Automated Method (Recommended)
-Use the automated screenshot script for best results:
-
-```bash
-# Install selenium for automation (optional)
-pip install selenium
-
-# Run the automated screenshot tool
-python capture_dashboard_screenshots.py
-```
-
-This will automatically:
-- Start the dashboard
-- Capture screenshots of all key views
-- Save them to the images/ directory
-
-#### Manual Method
-If automation doesn't work, capture screenshots manually:
-
-```bash
-# 1. Run the dashboard
-cd dashboard/
-source ../.venv/Scripts/activate
-streamlit run app.py
-
-# 2. Open http://localhost:8501 in your browser
-
-# 3. Take screenshots of different views:
-#    - Main dashboard with KPI cards → dashboard_kpi.png
-#    - Regional analysis section → dashboard_regional.png
-#    - Product heatmap → dashboard_heatmap.png
-#    - Time series charts → dashboard_timeseries.png
-
-# 4. Save screenshots to images/ directory
-```
 
 ## Technical Implementation
 
