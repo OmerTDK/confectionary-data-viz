@@ -63,7 +63,6 @@ This project analyzes UK confectionary sales data to understand regional perform
 
 ```
 ├── main.ipynb                 # Main analysis notebook with comprehensive EDA
-├── Analysis.ipynb            # Additional analysis notebook
 ├── confectionary.xlsx        # Raw sales data
 ├── technical_plan.md         # Detailed implementation guidance
 ├── grading criteria.xlsx     # Assessment criteria
