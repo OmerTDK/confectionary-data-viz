@@ -74,7 +74,6 @@ This project analyzes UK confectionary sales data to understand regional perform
 │   ├── month_region.csv         # Monthly regional sales
 │   └── year_region.csv          # Annual regional sales
 ├── generate_visualizations.py # Script to create visualization images
-├── capture_dashboard_screenshots.py # Script to help capture dashboard screenshots
 ├── images/                   # Generated visualization images
 │   ├── key_distributions.png
 │   ├── regional_profit.png
@@ -86,7 +85,8 @@ This project analyzes UK confectionary sales data to understand regional perform
 ├── src/                      # Source code modules
 │   └── data_prep.py          # Data preparation functions
 ├── dashboard/                # Interactive dashboard
-│   └── app.py                # Streamlit application
+│   ├── app.py                # Streamlit application
+│   └── capture_dashboard_screenshots.py # Screenshot capture tool
 └── README.md                 # This file
 ```
 

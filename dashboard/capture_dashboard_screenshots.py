@@ -26,9 +26,7 @@ def start_dashboard():
     """Start the Streamlit dashboard in background"""
     print("🚀 Starting Streamlit dashboard...")
 
-    # Change to dashboard directory
-    dashboard_dir = os.path.join(os.path.dirname(__file__), 'dashboard')
-    os.chdir(dashboard_dir)
+    # Already in dashboard directory, no need to change
 
     # Start streamlit in background
     try:
@@ -106,8 +104,10 @@ def automated_screenshots():
         image = Image.open(io.BytesIO(screenshot))
 
         # Save full screenshot
-        image.save("images/dashboard_full.png")
-        print("✅ Saved full dashboard screenshot: images/dashboard_full.png")
+        images_dir = os.path.join(os.path.dirname(__file__), '..', 'images')
+        screenshot_path = os.path.join(images_dir, 'dashboard_full.png')
+        image.save(screenshot_path)
+        print(f"✅ Saved full dashboard screenshot: {screenshot_path}")
 
         driver.quit()
         return True
@@ -122,9 +122,10 @@ def main():
     print("📸 Dashboard Screenshot Capture Tool")
     print("=" * 50)
 
-    # Check if images directory exists
-    if not os.path.exists('images'):
-        os.makedirs('images')
+    # Check if images directory exists (in parent directory)
+    images_dir = os.path.join(os.path.dirname(__file__), '..', 'images')
+    if not os.path.exists(images_dir):
+        os.makedirs(images_dir)
         print("📁 Created images directory")
 
     # Check requirements
