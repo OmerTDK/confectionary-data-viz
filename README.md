@@ -73,6 +73,11 @@ This project analyzes UK confectionary sales data to understand regional perform
 │   ├── region_conf_summary.csv  # Region × Product analysis
 │   ├── month_region.csv         # Monthly regional sales
 │   └── year_region.csv          # Annual regional sales
+├── generate_visualizations.py # Script to create visualization images
+├── images/                   # Generated visualization images
+│   ├── key_distributions.png
+│   ├── regional_profit.png
+│   └── product_profit.png
 └── README.md                 # This file
 ```
 
@@ -94,6 +99,39 @@ This project analyzes UK confectionary sales data to understand regional perform
 - **Growth Trends:** Overall positive sales trajectory
 - **Seasonal Variations:** Clear monthly patterns in sales volume
 
+## Visualizations & Results
+
+### Data Distributions
+![Key Distributions](images/key_distributions.png)
+*Figure 1: Distribution of key metrics showing right-skewed patterns in revenue and profit, indicating a few large transactions drive most of the business value.*
+
+### Regional Performance
+![Regional Profit](images/regional_profit.png)
+*Figure 2: Total profit by UK region (2000-2005), with Scotland leading in absolute profit while Northern Ireland shows strongest profit margins.*
+
+### Product Performance
+![Product Profit](images/product_profit.png)
+*Figure 3: Profit by confectionery type, highlighting Chocolate Chunk as the volume leader and Caramel Nut as a premium margin product.*
+
+### Dashboard Preview (Planned)
+The interactive Streamlit dashboard will include:
+- **KPI Cards:** Total units, revenue, profit, and average margin
+- **Regional Analysis:** Interactive bar charts and heatmaps
+- **Product Insights:** Performance comparison across regions
+- **Time Series:** Monthly trends with region filtering
+- **Cross-Analysis:** Region × Product profit margin matrix
+
+### Key Statistics Summary
+
+| Metric | Mean | Median | Std Dev | Min | Max |
+|--------|------|--------|---------|-----|-----|
+| Units Sold | 1,452 | 1,374 | 937 | 1 | 4,452 |
+| Revenue (£) | 2.1M | 1.8M | 1.8M | -1.4M | 19.7M |
+| Profit (£) | 3,200 | 2,700 | 3,400 | -8,000 | 31,000 |
+| Profit Margin | 0.31% | 0.29% | 0.15% | -0.76% | 1.2% |
+
+*Data based on 984 cleaned transactions after removing missing values*
+
 ## Technical Implementation
 
 ### Libraries Used
@@ -105,6 +143,13 @@ seaborn >= 0.11.0      # Statistical visualizations
 plotly >= 5.0.0        # Interactive charts
 streamlit >= 1.0.0     # Dashboard framework (planned)
 ```
+
+### Visualization Generation
+To create the visualization images shown in this README:
+```bash
+python generate_visualizations.py
+```
+This script will generate PNG files in the `images/` directory that can be included in reports or presentations.
 
 ### Environment Setup
 ```bash
@@ -135,10 +180,11 @@ jupyter notebook main.ipynb
 
 ### Execution Steps
 1. **Clone/Download** the project repository
-2. **Install Dependencies:** `pip install -r requirements.txt` (if available)
+2. **Install Dependencies:** `pip install pandas numpy matplotlib seaborn`
 3. **Launch Main Analysis:** `jupyter notebook main.ipynb`
 4. **Run All Cells:** Execute the notebook from top to bottom
-5. **Review Outputs:** Check generated visualizations and CSV exports
+5. **Generate Visualizations (Optional):** `python generate_visualizations.py`
+6. **Review Outputs:** Check generated visualizations and CSV exports
 
 ### Dashboard Development (Future)
 ```bash
