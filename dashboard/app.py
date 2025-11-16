@@ -13,8 +13,17 @@ from pathlib import Path
 import sys
 
 # Add src directory to path for imports
-sys.path.append(str(Path(__file__).parent.parent / "src"))
-from data_prep import prepare_data, get_regional_summary, get_product_summary, get_regional_product_matrix, get_monthly_trends
+import os
+current_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.dirname(current_dir)
+src_dir = os.path.join(parent_dir, 'src')
+sys.path.insert(0, src_dir)
+
+try:
+    from data_prep import prepare_data, get_regional_summary, get_product_summary, get_regional_product_matrix, get_monthly_trends
+except ImportError:
+    st.error("❌ Could not import data_prep module. Please ensure you're running from the project root directory.")
+    st.stop()
 
 
 # Set page configuration
